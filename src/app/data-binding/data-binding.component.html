@@ -16,5 +16,57 @@
     <img bind-src="urlImagem">
   </article>
 
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma Classe:
+      <select #classe (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-dark">Dark</option>
+        <option value="alert-danger">Erro</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-light">Sorria!</option>
+
+      </select>
+      <br><br>
+
+      <div class="alert {{ classe.value }}" role="alert">
+          Texto colorido conforme o valor do combobox.
+      </div>
+
+      <div class="alert" role="alert"
+      [class.alert-success]="classe.value == 'alert-success'">
+        Simplesmente Sucesso!
+      </div>
+      <div class="alert" role="alert"
+      [class.alert-info]="classe.value == 'alert-info'">
+        Code Now!
+      </div>
+      <div class="alert" role="alert"
+      [class.alert-dark]="classe.value == 'alert-dark'">
+        Olhos tranquilos!
+      </div>
+      <div class="alert" role="alert"
+      [class.alert-danger]="classe.value == 'alert-danger'">
+        Todo cuidado é pouco!
+      </div>
+      <div class="alert" role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'">
+        alert—check!
+      </div>
+      <div class="alert" role="alert"
+      [class.alert-light]="classe.value == 'alert-light'">
+        Luz Ação!
+      </div>
+
+      <div class="alert alert-light" role="alert"
+      [style.display]="classe.value == 'alert-light' ? 'block' : 'none'">
+        
+        Esse texto vai aparece em caso de uma Ação!
+      </div>
+
+    </div>
+  </article>
 
 </section>
