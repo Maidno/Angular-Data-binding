@@ -26,6 +26,16 @@ export class CicloComponent implements OnInit, OnChanges, DoCheck,
   ngDoCheck() {
     this.log('ngDoCheck');
   }
+  ngAfterContentInit() {
+    this.log('ngAfterContentInit');
+  }
+  ngAfterContentChecked() {
+    this.log('ngAfterContentChecked');
+  }
+
+  ngAfterViewInit() {
+    this.log('ngAfterViewInit');
+  }
 
   ngOnDestroy() {
     this.log('ngOnDestroy');
